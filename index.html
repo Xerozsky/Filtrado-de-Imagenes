@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Filtrado de Imagenes</title>        
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta
+            name="description"
+            content="Pagina web para filtrar imagenes con los filtros de media, mediana, laplaciano y sobel"
+        />
+        <meta
+            name="keywords"
+            content="filtrado de imagenes, image filtering, laplaciano, filtrado imagenes media, filtrado imagenes, mediana"
+        />
+        <meta
+            name="author"
+            content="Kevin Ayala, Gianfranco Barrera, Marlon Garcia, Jeanpierre Hilasaca, Antony Yauri"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
+
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/aos.css" />
+        <link rel="stylesheet" href="css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="code/style.css" />
+
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="css/templatemo-digital-trend.css" />
+
+        <style>
+            .hero-image-opacity {
+                opacity: 0.8; /* Ajusta este valor para cambiar la transparencia */
+                width: 50%; /* Ajusta el ancho al 50% del contenedor */
+                height: auto; /* Mantiene la proporción de la imagen */
+                border-radius: 20px; /* Redondea las esquinas de la imagen */
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- MENU BAR -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a id="matematica_computacional" class="navbar-brand" href="index.html">
+                    <i class="fa fa-line-chart"></i>
+                    Matematica Computacional
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">                        
+                        <li class="nav-item">
+                            <a href="#project" class="nav-link smoothScroll">Filtrar Imágenes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" target="_blank" class="nav-link contact">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero hero-bg d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-10 col-12 d-flex flex-column justify-content-center align-items-center">
+                        <div class="hero-text">
+                            <h1 class="text-white" data-aos="fade-up">Filtrado de Imágenes</h1>
+                            <a href="#project" class="custom-btn btn-bg btn mt-3" data-aos="fade-up" data-aos-delay="100">Empezar</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="hero-image" data-aos="fade-up" data-aos-delay="300">
+                            <img src="images/goku.png" class="img-fluid hero-image-opacity" alt="goku">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT -->
+        <section data-aos="fade-up" class="project section-padding" id="project">
+            <div class="imagenes">
+                <canvas id="imagen_filtrada" width="750" height="400"></canvas>
+                <canvas id="imagen_original" width="750" height="400"></canvas>
+            </div>
+            <div id="image_picker">
+                <div class="custom-file">
+                    <input id="image_input" type="file" class="custom-file-input" lang="es" accept="image/png,image/jpeg,image/jpg"/>
+                    <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                </div>
+            </div>
+            <form action="filtro" method="post">
+                <label for="filtro" class="">
+                    <select name="filtro" id="filtro" class="form-control form-control-lg">
+                        <option value="mediana">Mediana</option>
+                        <option value="media">Media</option>
+                        <option value="laplaciano">Laplaciano</option>
+                        <option value="sobel">Sobel</option>
+                    </select>
+                </label>
+            </form>
+            <div id="submit">
+                <button class="btn btn-lg btn-outline-primary" id="submit" type="submit" onclick="submit()">Aplicar</button>
+                <button class="btn btn-lg btn-primary" id="download-button" type="download" onclick="downloadCanvas()">Descargar</button>
+            </div>
+        </section>        
+
+        <footer class="bg-dark text-white text-center p-3">
+            <div class="container">
+                © 2024 Grupo 8 Matemática Computacional
+            </div>
+        </footer>
+
+        <!-- SCRIPTS -->
+        <script src="code/app.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/aos.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/smoothscroll.js"></script>
+        <script src="js/custom.js"></script>
+    </body>
+</html>
